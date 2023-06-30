@@ -1,0 +1,161 @@
+$Dark: #1E1E1E;
+$DarkGray: #3F3F3F;
+$White: #EFEFEF;
+$WhiteGray: #BFBFBF;
+$Blue: #007AFF;
+
+@keyframes Right {
+  0%
+  {
+    left: 100vw;
+  }
+  100%
+  {
+    left: 0;
+  }
+}
+
+@keyframes Left {
+  0%
+  {
+    right: 100vw;
+  }
+  100%
+  {
+    right: 0;
+  }
+}
+
+*
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0.75vw;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $Blue;
+  border-radius: 1vw;
+}
+
+h1
+{
+  font-size: 3vw;
+}
+
+h2
+{
+  font-size: 2.25vw;
+}
+
+body,htnl
+{
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+html
+{
+  scroll-behavior: smooth;
+  overflow-y: overlay;
+  scrollbar-width: auto;
+  scrollbar-color: $Blue rgba(0,0,0,0);
+}
+
+section
+{
+  position: relative;
+  width: 100%;
+  height: 110vh;
+  padding: 10vw 5vw;
+  gap: 10vw;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  &:nth-child(2n-1)
+  {
+    background-color: $Dark;
+    flex-direction: row;
+    > div
+    {
+      align-items: flex-start;
+      h2
+      {
+        color: $White;
+      }
+    }
+    > img
+    {
+      border: 0.3vw solid $DarkGray;
+    }
+  }
+  &:nth-child(2n)
+  {
+    background-color: $White;
+    flex-direction: row-reverse;
+    > div
+    {
+      align-items: flex-end;
+      > *
+      {
+        text-align: right;
+      }
+      h2
+      {
+        color: $Dark;
+      }
+    }
+    > img
+    {
+      border: 0.3vw solid $WhiteGray;
+    }
+  }
+  &:first-child
+  {
+    > img
+    {
+      border-radius: 100%;
+      border: none;
+    }
+  }
+  > div
+  {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2vw;
+    width: 40vw;
+    min-height: 40vw;
+    max-height: 100%;
+    > h1
+    {
+      color: $Blue;
+    }
+  }
+  > img
+  {
+    position: relative;
+    width: 40vw;
+    height: 40vw;
+    border-radius: 2vw;
+    object-fit: cover;
+    transition: 0.5s transform;
+    &:hover
+    {
+      transform: scale(1.10);
+    }
+  }
+}
+
